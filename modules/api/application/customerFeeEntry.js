@@ -11,7 +11,7 @@ mongoose.connect('mongodb://eleven4generator:eleven4generator@ds213239.mlab.com:
 
 var customerFeeEntrySchema = new Schema({
     id_number : {
-        type : Number,
+        type : String,
         required : true,
     },
     name: {
@@ -67,7 +67,8 @@ record.saveData = function (req, res) {
 
     var postBody = req.body;
     var mydate = new Date();
-    var mlist = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
+    var mlist = [ "January", "February", "March", "April", "May", "June", "July",
+     "August", "September", "October", "November", "December" ];
     var data = {
         id_number : postBody.id_number,
         name: postBody.name,
